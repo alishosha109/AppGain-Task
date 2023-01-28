@@ -9,48 +9,227 @@
 		{
 			"name": "getToken",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/shortlinks/getToken?username=ali_shosha&id=123456",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"shortlinks",
+						"getToken"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "ali_shosha"
+						},
+						{
+							"key": "id",
+							"value": "123456"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "List Shortlinks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzQ3NzA2MDQsImV4cCI6MTY5MjA1MDYwNH0.cI6l8L22ZrHUqRFHkQaNZCd5SQqLdPTxaeZRRdbyFEQ",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"slug\":\"2n027ndmi\",\r\n    \"ios\":{\r\n        \"primary\":\"primary_link\",\r\n        \"fallback\":\"fallback_link\"\r\n    },\r\n    \"android\":{\r\n        \"primary\":\"primary_link\",\r\n        \"fallback\":\"fallback_link\"\r\n    },\r\n    \"web\":\"web_link\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/shortlinks/",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"shortlinks",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Create New shortlink",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsaV9zaG9zaGEiLCJ1c2VySWQiOiIxMjM0NTYiLCJpYXQiOjE2NzQ3ODM1MjMsImV4cCI6MTY5MjA2MzUyM30.YwFbLNFcB_aUaUo0OA0U7k3Rat8QfPOwrIZGq6N_B6c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"slug\":\"test\",\r\n    \"ios\":{\"primary\":\"testpri\",\"fallback\":\"testfallback\"},\r\n    \"android\":{\"primary\":\"testpri\",\"fallback\":\"testfallback\"},\r\n    \"web\":\"testweb\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/shortlinks",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"shortlinks"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Get One Link",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzQ3NzA2MDQsImV4cCI6MTY5MjA1MDYwNH0.cI6l8L22ZrHUqRFHkQaNZCd5SQqLdPTxaeZRRdbyFEQ",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/shortlinks/getOneLink?linkId=kNSh7UQPKaJVEPa9vJve",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"shortlinks",
+						"getOneLink"
+					],
+					"query": [
+						{
+							"key": "linkId",
+							"value": "kNSh7UQPKaJVEPa9vJve"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Update ShortLink",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsaV9zaG9zaGEiLCJpYXQiOjE2NzQ3NzE3MzksImV4cCI6MTY5MjA1MTczOX0.daw8OeFdRio9nwoblGSlXBZDBsmfbfcsL8uco045-qM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"web\":\"testUpdateee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/shortlinks/updateLink?linkId=kNSh7UQPKaJVEPa9vJve",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"shortlinks",
+						"updateLink"
+					],
+					"query": [
+						{
+							"key": "linkId",
+							"value": "kNSh7UQPKaJVEPa9vJve"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Delete Shortlink",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsaV9zaG9zaGEiLCJ1c2VySWQiOiIxMjM0NTYiLCJpYXQiOjE2NzQ3NzI1NzMsImV4cCI6MTY5MjA1MjU3M30.ktHxqP1TvG6EdKt2IFl15VkrKMmLyBgYnlTAQ-A1aZY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/shortlinks/deleteShortLink?linkId=NOrz7GKJGjByPcpjZwLt",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"shortlinks",
+						"deleteShortLink"
+					],
+					"query": [
+						{
+							"key": "linkId",
+							"value": "NOrz7GKJGjByPcpjZwLt"
+						}
+					]
+				}
 			},
 			"response": []
 		}

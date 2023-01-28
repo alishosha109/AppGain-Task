@@ -84,7 +84,7 @@ exports.shortLinks_get_one = async(req, res, next) => {
 // add shortlink request controller
 exports.shortLinks_add_one = async(req, res, next) => {
     var slug = req.body.slug
-    if (slug === undefined){
+    if (slug === undefined || slug.length == 0){
       slug = generateRandomFloatInRange();
     }
    
