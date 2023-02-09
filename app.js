@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const ShortLinksRoutes = require('./routes/shortlinks')
+const WebHookRoutes = require('./routes/webhook')
 const cors = require('cors')
 
 const port = process.env.port || 4000;
@@ -27,6 +28,7 @@ app.use((req,res,next)=>{
 
 //initialize routes
 app.use('/api/shortlinks',ShortLinksRoutes);
+app.use('/api/webhook',WebHookRoutes);
 
 
 
