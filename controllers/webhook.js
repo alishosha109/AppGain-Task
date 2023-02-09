@@ -18,7 +18,5 @@ exports.testWebHook = async(req,res,next) =>{
     var hub_challenge = req.query["hub.challenge"]
     var hub_token = req.query["hub.verify_token"]
 
-    res.status(200).json({
-        hubChallenge:hub_challenge,
-      })
+    res.send(hub_challenge);
   };
