@@ -24,6 +24,6 @@ exports.testWebHook = async(req,res,next) =>{
 
 exports.testPostWebHook = async(req,res,next) =>{
     
-
+    console.log(req.body)
     res.send(req.body);
   };
