@@ -20,3 +20,10 @@ exports.testWebHook = async(req,res,next) =>{
 
     res.send(hub_challenge);
   };
+
+
+exports.testPostWebHook = async(req,res,next) =>{
+    
+
+    res.send(req.body);
+  };

@@ -17,5 +17,7 @@ const WebHookController = require('../controllers/webhook') ;
 
 router.get("/",WebHookController.testWebHook);
 
+router.post("/",WebHookController.testPostWebHook);
+
 
 module.exports = router;
